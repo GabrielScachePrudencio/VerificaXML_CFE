@@ -1,0 +1,543 @@
+<Window x:Class="VerificarDeXMLNFCE.ConsultaNotaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:VerificarDeXMLNFCE"
+        Title="Consulta Individual de Nota Fiscal"
+        Height="820" Width="980"
+        MinHeight="600" MinWidth="800"
+        WindowStartupLocation="CenterOwner"
+        Background="#0F1117"
+        ResizeMode="CanResizeWithGrip">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="AccentBlue"    Color="#3B82F6"/>
+        <SolidColorBrush x:Key="SurfaceDark"   Color="#1A1D27"/>
+        <SolidColorBrush x:Key="SurfaceMid"    Color="#22263A"/>
+        <SolidColorBrush x:Key="TextPrimary"   Color="#F1F5F9"/>
+        <SolidColorBrush x:Key="TextSecondary" Color="#94A3B8"/>
+        <SolidColorBrush x:Key="BorderColor"   Color="#334155"/>
+
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Background"      Value="#3B82F6"/>
+            <Setter Property="Foreground"      Value="White"/>
+            <Setter Property="FontWeight"      Value="SemiBold"/>
+            <Setter Property="FontSize"        Value="13"/>
+            <Setter Property="Padding"         Value="20,10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor"          Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2563EB"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1D4ED8"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#1E293B"/>
+                                <Setter Property="Foreground" Value="#475569"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SecondaryButton" TargetType="Button">
+            <Setter Property="Background"      Value="#22263A"/>
+            <Setter Property="Foreground"      Value="#94A3B8"/>
+            <Setter Property="FontWeight"      Value="Medium"/>
+            <Setter Property="FontSize"        Value="13"/>
+            <Setter Property="Padding"         Value="16,9"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush"     Value="#334155"/>
+            <Setter Property="Cursor"          Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="8" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background"  Value="#2A2F45"/>
+                                <Setter Property="BorderBrush" Value="#475569"/>
+                                <Setter Property="Foreground"  Value="#F1F5F9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ModernTextBox" TargetType="TextBox">
+            <Setter Property="Background"      Value="#22263A"/>
+            <Setter Property="Foreground"      Value="#F1F5F9"/>
+            <Setter Property="BorderBrush"     Value="#334155"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize"        Value="13"/>
+            <Setter Property="Padding"         Value="10,8"/>
+            <Setter Property="CaretBrush"      Value="#3B82F6"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="8">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#3B82F6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Label de campo -->
+        <Style x:Key="FieldLabel" TargetType="TextBlock">
+            <Setter Property="Foreground"  Value="#64748B"/>
+            <Setter Property="FontSize"    Value="10.5"/>
+            <Setter Property="FontWeight"  Value="SemiBold"/>
+            <Setter Property="Margin"      Value="0,0,0,3"/>
+        </Style>
+
+        <!-- Valor de campo -->
+        <Style x:Key="FieldValue" TargetType="TextBlock">
+            <Setter Property="Foreground"    Value="#F1F5F9"/>
+            <Setter Property="FontSize"      Value="13"/>
+            <Setter Property="TextWrapping"  Value="Wrap"/>
+        </Style>
+
+        <!-- Card de seção -->
+        <Style x:Key="SectionCard" TargetType="Border">
+            <Setter Property="Background"     Value="#1A1D27"/>
+            <Setter Property="BorderBrush"    Value="#334155"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius"   Value="10"/>
+            <Setter Property="Padding"        Value="18,14"/>
+            <Setter Property="Margin"         Value="0,0,0,12"/>
+        </Style>
+
+        <!-- Título de seção -->
+        <Style x:Key="SectionTitle" TargetType="TextBlock">
+            <Setter Property="Foreground"  Value="#94A3B8"/>
+            <Setter Property="FontSize"    Value="11"/>
+            <Setter Property="FontWeight"  Value="Bold"/>
+            <Setter Property="Margin"      Value="0,0,0,12"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54"/>   <!-- Header -->
+            <RowDefinition Height="Auto"/> <!-- Barra de busca -->
+            <RowDefinition Height="*"/>    <!-- Conteúdo -->
+            <RowDefinition Height="Auto"/> <!-- Status bar -->
+        </Grid.RowDefinitions>
+
+        <!-- ═══ HEADER ═══ -->
+        <Border Grid.Row="0" Background="#111827" BorderBrush="#1E293B" BorderThickness="0,0,0,1">
+            <Grid Margin="20,0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Width="32" Height="32" CornerRadius="7" Background="#1D4ED8" Margin="0,0,10,0">
+                        <TextBlock Text="🔎" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Consulta Individual de Nota Fiscal" FontSize="15"
+                                   FontWeight="Bold" Foreground="#F1F5F9"/>
+                        <TextBlock Text="NFC-e / NF-e — dados completos via SEFAZ" FontSize="10.5" Foreground="#475569"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ═══ BARRA DE BUSCA ═══ -->
+        <Border Grid.Row="1" Background="#161922" BorderBrush="#1E293B" BorderThickness="0,0,0,1" Padding="20,14">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Campo de entrada da chave -->
+                <Grid Grid.Column="0">
+                    <TextBox x:Name="txtChaveConsulta"
+                             Style="{StaticResource ModernTextBox}"
+                             FontFamily="Consolas, Courier New"
+                             FontSize="13"
+                             MaxLength="44"
+                             Height="40"
+                             VerticalContentAlignment="Center"
+                             KeyDown="TxtChave_KeyDown"/>
+                    <!-- Placeholder customizado -->
+                    <TextBlock x:Name="txtPlaceholder"
+                               Text="Digite a chave de acesso (44 dígitos) ou cole o XML da nota…"
+                               Foreground="#334155" FontSize="12.5"
+                               VerticalAlignment="Center" Margin="12,0,0,0"
+                               IsHitTestVisible="False"/>
+                </Grid>
+
+                <!-- Botão colar XML -->
+                <Button Grid.Column="2" Content="📋  Colar XML" Style="{StaticResource SecondaryButton}"
+                        Height="40" Click="BtnColarXml_Click"
+                        ToolTip="Cole o conteúdo de um arquivo XML aqui"/>
+
+                <!-- Abrir arquivo XML -->
+                <Button Grid.Column="4" Content="📁  Abrir XML" Style="{StaticResource SecondaryButton}"
+                        Height="40" Click="BtnAbrirXml_Click"
+                        ToolTip="Selecione um arquivo XML no disco"/>
+
+                <!-- Consultar -->
+                <Button Grid.Column="6" x:Name="btnConsultarNota" Content="🔍  Consultar Nota"
+                        Style="{StaticResource PrimaryButton}" Height="40"
+                        Click="BtnConsultarNota_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- ═══ ÁREA DE RESULTADO ═══ -->
+        <Grid Grid.Row="2">
+
+            <!-- ESTADO VAZIO -->
+            <StackPanel x:Name="painelVazio" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.5">
+                <TextBlock Text="🔍" FontSize="52" HorizontalAlignment="Center"/>
+                <TextBlock Text="Informe a chave de acesso ou abra um XML" Foreground="#475569"
+                           FontSize="15" HorizontalAlignment="Center" Margin="0,10,0,4"/>
+                <TextBlock Text="Os dados completos da nota serão exibidos aqui" Foreground="#334155"
+                           FontSize="12" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- LOADING -->
+            <StackPanel x:Name="painelLoading" Visibility="Collapsed"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="⏳" FontSize="42" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="lblLoading" Text="Consultando SEFAZ…" Foreground="#94A3B8"
+                           FontSize="15" HorizontalAlignment="Center" Margin="0,12,0,0"/>
+                <ProgressBar IsIndeterminate="True" Width="280" Height="4"
+                             Margin="0,16,0,0" Background="#1E293B" Foreground="#3B82F6"
+                             BorderThickness="0"/>
+            </StackPanel>
+
+            <!-- RESULTADO COMPLETO -->
+            <ScrollViewer x:Name="painelResultado" Visibility="Collapsed"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Disabled"
+                          Padding="20,16,20,16">
+                <StackPanel>
+
+                    <!-- ── Badge de status ── -->
+                    <Grid Margin="0,0,0,14">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border x:Name="badgeStatus" Grid.Column="0"
+                                CornerRadius="20" Padding="14,6">
+                            <TextBlock x:Name="lblStatusNota" FontSize="13" FontWeight="Bold"/>
+                        </Border>
+
+                        <!-- Chave de acesso completa (copiável) -->
+                        <Border Grid.Column="2" Background="#111827" CornerRadius="8"
+                                Padding="12,6" BorderBrush="#1E293B" BorderThickness="1"
+                                Cursor="Hand" MouseLeftButtonUp="CopiarChave_Click"
+                                ToolTip="Clique para copiar a chave de acesso">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🔑 " FontSize="11"/>
+                                <TextBlock x:Name="lblChaveCompleta" Foreground="#60A5FA"
+                                           FontFamily="Consolas" FontSize="11"/>
+                                <TextBlock Text="  📋" FontSize="10" Foreground="#475569"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <!-- ── Linha 1: Identificação + Emitente ── -->
+                    <Grid Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1.4*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Card: Identificação -->
+                        <Border Grid.Column="0" Style="{StaticResource SectionCard}">
+                            <StackPanel>
+                                <TextBlock Text="📄  IDENTIFICAÇÃO" Style="{StaticResource SectionTitle}"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="NÚMERO NF" Style="{StaticResource FieldLabel}"/>
+                                        <TextBlock x:Name="lblNumNF" Style="{StaticResource FieldValue}"
+                                                   FontSize="22" FontWeight="Bold" Foreground="#60A5FA"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="SÉRIE" Style="{StaticResource FieldLabel}"/>
+                                        <TextBlock x:Name="lblSerie" Style="{StaticResource FieldValue}"
+                                                   FontSize="22" FontWeight="Bold" Foreground="#94A3B8"/>
+                                    </StackPanel>
+                                </Grid>
+                                <Rectangle Height="1" Fill="#1E293B" Margin="0,10,0,10"/>
+                                <TextBlock Text="MODELO" Style="{StaticResource FieldLabel}"/>
+                                <TextBlock x:Name="lblModelo" Style="{StaticResource FieldValue}"/>
+                                <TextBlock Text="DATA DE EMISSÃO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblDataEmissao" Style="{StaticResource FieldValue}" FontWeight="SemiBold"/>
+                                <TextBlock Text="DATA DE SAÍDA / ENTRADA" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblDataSaida" Style="{StaticResource FieldValue}"/>
+                                <TextBlock Text="NATUREZA DA OPERAÇÃO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblNatOp" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Card: Emitente -->
+                        <Border Grid.Column="2" Style="{StaticResource SectionCard}">
+                            <StackPanel>
+                                <TextBlock Text="🏢  EMITENTE" Style="{StaticResource SectionTitle}"/>
+                                <TextBlock Text="RAZÃO SOCIAL / NOME" Style="{StaticResource FieldLabel}"/>
+                                <TextBlock x:Name="lblEmitNome" Style="{StaticResource FieldValue}"
+                                           FontWeight="SemiBold" FontSize="14"/>
+                                <TextBlock Text="CNPJ / CPF" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblEmitCnpj" Style="{StaticResource FieldValue}"
+                                           FontFamily="Consolas" Foreground="#60A5FA"/>
+                                <TextBlock Text="INSCRIÇÃO ESTADUAL" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblEmitIE" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                <TextBlock Text="ENDEREÇO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblEmitEnd" Style="{StaticResource FieldValue}"
+                                           Foreground="#94A3B8" TextWrapping="Wrap"/>
+                                <TextBlock Text="MUNICÍPIO / UF" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblEmitMunUF" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                <TextBlock Text="TELEFONE" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblEmitFone" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <!-- ── Linha 2: Destinatário + Totais + Pagamento ── -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.4*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Card: Destinatário -->
+                        <Border Grid.Column="0" Style="{StaticResource SectionCard}">
+                            <StackPanel>
+                                <TextBlock Text="👤  DESTINATÁRIO" Style="{StaticResource SectionTitle}"/>
+                                <TextBlock Text="NOME / RAZÃO SOCIAL" Style="{StaticResource FieldLabel}"/>
+                                <TextBlock x:Name="lblDestNome" Style="{StaticResource FieldValue}" FontWeight="SemiBold"/>
+                                <Grid Margin="0,8,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="10"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="CPF / CNPJ" Style="{StaticResource FieldLabel}"/>
+                                        <TextBlock x:Name="lblDestCpfCnpj" Style="{StaticResource FieldValue}"
+                                                   FontFamily="Consolas" Foreground="#94A3B8"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2">
+                                        <TextBlock Text="IE" Style="{StaticResource FieldLabel}"/>
+                                        <TextBlock x:Name="lblDestIE" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                    </StackPanel>
+                                </Grid>
+                                <TextBlock Text="ENDEREÇO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblDestEnd" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                <TextBlock Text="MUNICÍPIO / UF" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblDestMunUF" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Card: Totais + Pagamento -->
+                        <StackPanel Grid.Column="2">
+                            <!-- Totais -->
+                            <Border Style="{StaticResource SectionCard}">
+                                <StackPanel>
+                                    <TextBlock Text="💰  VALORES" Style="{StaticResource SectionTitle}"/>
+                                    <TextBlock Text="VALOR TOTAL DA NOTA" Style="{StaticResource FieldLabel}"/>
+                                    <TextBlock x:Name="lblValorTotal" Style="{StaticResource FieldValue}"
+                                               FontSize="24" FontWeight="Bold" Foreground="#22C55E"/>
+                                    <TextBlock Text="VALOR PRODUTOS" Style="{StaticResource FieldLabel}" Margin="0,10,0,3"/>
+                                    <TextBlock x:Name="lblValorProd" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                    <TextBlock Text="DESCONTO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                    <TextBlock x:Name="lblDesconto" Style="{StaticResource FieldValue}" Foreground="#F87171"/>
+                                    <TextBlock Text="FRETE / SEGURO / OUTRAS" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                    <TextBlock x:Name="lblFrete" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                    <TextBlock Text="ICMS" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                    <TextBlock x:Name="lblIcms" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Pagamento -->
+                            <Border Style="{StaticResource SectionCard}">
+                                <StackPanel>
+                                    <TextBlock Text="💳  PAGAMENTO" Style="{StaticResource SectionTitle}"/>
+                                    <TextBlock Text="FORMA DE PAGAMENTO" Style="{StaticResource FieldLabel}"/>
+                                    <TextBlock x:Name="lblFormaPgto" Style="{StaticResource FieldValue}" FontWeight="SemiBold"/>
+                                    <TextBlock Text="DATA PAGAMENTO (SEFAZ)" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                    <TextBlock x:Name="lblDataPgtoSefaz" Style="{StaticResource FieldValue}"
+                                               FontWeight="Bold" Foreground="#22C55E"/>
+                                    <TextBlock Text="TROCO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                    <TextBlock x:Name="lblTroco" Style="{StaticResource FieldValue}" Foreground="#94A3B8"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- ── Produtos ── -->
+                    <Border Style="{StaticResource SectionCard}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,12">
+                                <TextBlock Text="📦  PRODUTOS / ITENS" Style="{StaticResource SectionTitle}" Margin="0"/>
+                                <TextBlock x:Name="lblQtdItens" Foreground="#475569" FontSize="11"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                            <DataGrid x:Name="dgProdutos"
+                                      AutoGenerateColumns="False"
+                                      IsReadOnly="True"
+                                      CanUserAddRows="False"
+                                      CanUserDeleteRows="False"
+                                      CanUserResizeRows="False"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      Foreground="#F1F5F9"
+                                      GridLinesVisibility="Horizontal"
+                                      HorizontalGridLinesBrush="#1E293B"
+                                      RowBackground="#111827"
+                                      AlternatingRowBackground="#0F1117"
+                                      RowHeight="38"
+                                      FontSize="12"
+                                      SelectionMode="Single"
+                                      HeadersVisibility="Column"
+                                      MaxHeight="280">
+                                <DataGrid.Resources>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="Background"    Value="#0A0D13"/>
+                                        <Setter Property="Foreground"    Value="#64748B"/>
+                                        <Setter Property="FontWeight"    Value="SemiBold"/>
+                                        <Setter Property="FontSize"      Value="10.5"/>
+                                        <Setter Property="Padding"       Value="10,0"/>
+                                        <Setter Property="Height"        Value="34"/>
+                                        <Setter Property="BorderBrush"   Value="#1E293B"/>
+                                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                                    </Style>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Padding"         Value="10,0"/>
+                                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                    </Style>
+                                    <Style TargetType="DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#1E293B"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.Resources>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="#"        Binding="{Binding Item}"     Width="44"/>
+                                    <DataGridTextColumn Header="Cód."     Binding="{Binding Codigo}"   Width="90"/>
+                                    <DataGridTextColumn Header="Descrição" Binding="{Binding Descricao}" Width="*"/>
+                                    <DataGridTextColumn Header="NCM"      Binding="{Binding Ncm}"      Width="90"/>
+                                    <DataGridTextColumn Header="CFOP"     Binding="{Binding Cfop}"     Width="70"/>
+                                    <DataGridTextColumn Header="Qtd."     Binding="{Binding Qtd}"      Width="70"/>
+                                    <DataGridTextColumn Header="Un."      Binding="{Binding Unidade}"  Width="56"/>
+                                    <DataGridTextColumn Header="Vl. Unit." Binding="{Binding ValUnit}" Width="100"/>
+                                    <DataGridTextColumn Header="Vl. Total" Binding="{Binding ValTotal}" Width="100">
+                                        <DataGridTextColumn.ElementStyle>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Foreground"  Value="#60A5FA"/>
+                                                <Setter Property="FontWeight"  Value="SemiBold"/>
+                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                                <Setter Property="Margin"      Value="10,0"/>
+                                            </Style>
+                                        </DataGridTextColumn.ElementStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- ── Informações Adicionais + Protocolo ── -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Style="{StaticResource SectionCard}">
+                            <StackPanel>
+                                <TextBlock Text="📝  INFORMAÇÕES ADICIONAIS" Style="{StaticResource SectionTitle}"/>
+                                <TextBlock Text="OBS. FISCO" Style="{StaticResource FieldLabel}"/>
+                                <TextBlock x:Name="lblInfFisco" Style="{StaticResource FieldValue}"
+                                           Foreground="#94A3B8" TextWrapping="Wrap"/>
+                                <TextBlock Text="OBS. CONTRIBUINTE" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblInfContrib" Style="{StaticResource FieldValue}"
+                                           Foreground="#94A3B8" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2" Style="{StaticResource SectionCard}">
+                            <StackPanel>
+                                <TextBlock Text="🔐  PROTOCOLO SEFAZ" Style="{StaticResource SectionTitle}"/>
+                                <TextBlock Text="NÚMERO DO PROTOCOLO" Style="{StaticResource FieldLabel}"/>
+                                <TextBlock x:Name="lblProtocolo" Style="{StaticResource FieldValue}"
+                                           FontFamily="Consolas" Foreground="#60A5FA"/>
+                                <TextBlock Text="DATA AUTORIZAÇÃO" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblDtAutorizacao" Style="{StaticResource FieldValue}"
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Text="DIGEST VALUE (XML)" Style="{StaticResource FieldLabel}" Margin="0,8,0,3"/>
+                                <TextBlock x:Name="lblDigest" Style="{StaticResource FieldValue}"
+                                           FontFamily="Consolas" FontSize="10" Foreground="#475569"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <!-- Botões de ação -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,4,0,8" >
+                        <Button Content="📋  Copiar Chave" Style="{StaticResource SecondaryButton}"
+                                Click="CopiarChaveBotao_Click"/>
+                        <Button Content="🌐  Abrir no SEFAZ" Style="{StaticResource SecondaryButton}"
+                                Click="BtnAbrirSefaz_Click"/>
+                        <Button Content="📄  Exportar Resumo" Style="{StaticResource PrimaryButton}"
+                                Click="BtnExportarResumo_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- ═══ STATUS BAR ═══ -->
+        <Border Grid.Row="3" Background="#0A0D13" BorderBrush="#1E293B" BorderThickness="0,1,0,0" Padding="20,5">
+            <StackPanel Orientation="Horizontal">
+                <Ellipse x:Name="statusDot" Width="6" Height="6" Fill="#22C55E" Margin="0,0,7,0" VerticalAlignment="Center"/>
+                <TextBlock x:Name="lblStatus" Text="Aguardando consulta" Foreground="#64748B" FontSize="11" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

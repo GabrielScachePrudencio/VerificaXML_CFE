@@ -1,0 +1,255 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\verificardexmlnfce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\verificardexmlnfce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\consultanotawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\consultanotawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\consultanotawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\consultanotawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\xmlparserdetalhe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\xmlparserdetalhe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\sefazconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\sefazconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\xmlparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\xmlparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\sefazurlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\sefazurlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\placeholderbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\placeholderbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|c:\\users\\flavio\\desktop\\linguagens\\projetos\\verificardexmlnfce\\verificardexmlnfce\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF2479B9-5145-4049-B8EB-9DD8F549532E}|VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj|solutionrelative:verificardexmlnfce\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 282,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsultaNotaWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAMwKUAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T05:43:49.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "XmlParserDetalhe.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\XmlParserDetalhe.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\XmlParserDetalhe.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\XmlParserDetalhe.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\XmlParserDetalhe.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAmwBIBAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T05:24:31.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SefazConsulta.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\SefazConsulta.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\SefazConsulta.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\SefazConsulta.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\SefazConsulta.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAswHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T05:21:58.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SefazUrlHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\SefazUrlHelper.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\SefazUrlHelper.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\SefazUrlHelper.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\SefazUrlHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T05:21:43.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Models.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\Models.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\Models.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\Models.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\Models.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAA0wD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T05:21:35.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlaceholderBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\PlaceholderBehavior.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\PlaceholderBehavior.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\PlaceholderBehavior.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\PlaceholderBehavior.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T04:55:14.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConsultaNotaWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\ConsultaNotaWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-11T04:54:52.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VerificarDeXMLNFCE.csproj",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\VerificarDeXMLNFCE.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-11T04:53:42.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\App.xaml",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\App.xaml",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\App.xaml",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-11T04:53:04.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\App.xaml.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\App.xaml.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T04:53:04.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "XmlParser.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\XmlParser.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\XmlParser.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\XmlParser.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\XmlParser.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAcwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T04:47:25.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\MainWindow.xaml",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-11T04:26:21.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "VerificarDeXMLNFCE\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Flavio\\Desktop\\Linguagens\\PROJETOS\\VerificarDeXMLNFCE\\VerificarDeXMLNFCE\\MainWindow.xaml.cs",
+              "RelativeToolTip": "VerificarDeXMLNFCE\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAADwv5EAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T04:26:15.744Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 86,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

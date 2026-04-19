@@ -100,7 +100,7 @@ namespace VerificarDeXMLNFCE
 
         public static NfceDetalhe ParseDetalhado(string caminhoXml)
         {
-            var d   = new NfceDetalhe();
+            var d = new NfceDetalhe();
             var doc = XDocument.Load(caminhoXml);
 
             // Aceita nfeProc ou NFe diretamente
@@ -117,31 +117,33 @@ namespace VerificarDeXMLNFCE
             var ide = Get(infNFe, "ide");
             if (ide != null)
             {
-                d.NumeroNF   = Txt(ide, "nNF");
-                d.Serie      = Txt(ide, "serie");
-                d.Modelo     = Txt(ide, "mod");
-                d.NatOp      = Txt(ide, "natOp");
+                d.NumeroNF = Txt(ide, "nNF");
+                d.Serie = Txt(ide, "serie");
+                d.Modelo = Txt(ide, "mod");
+                d.NatOp = Txt(ide, "natOp");
                 d.DataEmissao = ParseData(Txt(ide, "dhEmi"));
-                d.DataSaida  = ParseData(Txt(ide, "dhSaiEnt") ?? Txt(ide, "dSaiEnt") ?? "");
+                d.DataSaida = ParseData(Txt(ide, "dhSaiEnt").Length > 0
+                                    ? Txt(ide, "dhSaiEnt")
+                                    : Txt(ide, "dSaiEnt"));
             }
 
             // ── emit ────────────────────────────────────────────────────────────
             var emit = Get(infNFe, "emit");
             if (emit != null)
             {
-                d.EmitNome  = Txt(emit, "xNome") is { Length: > 0 } n ? n : Txt(emit, "xFant");
-                d.EmitCnpj  = Txt(emit, "CNPJ") is { Length: > 0 } c ? c : Txt(emit, "CPF");
-                d.EmitIE    = Txt(emit, "IE");
-                d.EmitFone  = Txt(emit, "fone");
+                d.EmitNome = Txt(emit, "xNome") is { Length: > 0 } n ? n : Txt(emit, "xFant");
+                d.EmitCnpj = Txt(emit, "CNPJ") is { Length: > 0 } c ? c : Txt(emit, "CPF");
+                d.EmitIE = Txt(emit, "IE");
+                d.EmitFone = Txt(emit, "fone");
                 var ea = Get(emit, "enderEmit");
                 if (ea != null)
                 {
-                    d.EmitLogr   = Txt(ea, "xLgr");
-                    d.EmitNum    = Txt(ea, "nro");
+                    d.EmitLogr = Txt(ea, "xLgr");
+                    d.EmitNum = Txt(ea, "nro");
                     d.EmitBairro = Txt(ea, "xBairro");
-                    d.EmitMun    = Txt(ea, "xMun");
-                    d.EmitUF     = Txt(ea, "UF");
-                    d.EmitCep    = FormatarCep(Txt(ea, "CEP"));
+                    d.EmitMun = Txt(ea, "xMun");
+                    d.EmitUF = Txt(ea, "UF");
+                    d.EmitCep = FormatarCep(Txt(ea, "CEP"));
                 }
             }
 
@@ -149,18 +151,18 @@ namespace VerificarDeXMLNFCE
             var dest = Get(infNFe, "dest");
             if (dest != null)
             {
-                d.DestNome    = Txt(dest, "xNome");
+                d.DestNome = Txt(dest, "xNome");
                 d.DestCpfCnpj = Txt(dest, "CNPJ") is { Length: > 0 } c2 ? c2 : Txt(dest, "CPF");
-                d.DestIE      = Txt(dest, "IE");
+                d.DestIE = Txt(dest, "IE");
                 var da = Get(dest, "enderDest");
                 if (da != null)
                 {
-                    d.DestLogr   = Txt(da, "xLgr");
-                    d.DestNum    = Txt(da, "nro");
+                    d.DestLogr = Txt(da, "xLgr");
+                    d.DestNum = Txt(da, "nro");
                     d.DestBairro = Txt(da, "xBairro");
-                    d.DestMun    = Txt(da, "xMun");
-                    d.DestUF     = Txt(da, "UF");
-                    d.DestCep    = FormatarCep(Txt(da, "CEP"));
+                    d.DestMun = Txt(da, "xMun");
+                    d.DestUF = Txt(da, "UF");
+                    d.DestCep = FormatarCep(Txt(da, "CEP"));
                 }
             }
 
@@ -172,20 +174,20 @@ namespace VerificarDeXMLNFCE
                 if (prod == null) continue;
 
                 decimal qtd = Dec(Txt(prod, "qCom"));
-                decimal vu  = Dec(Txt(prod, "vUnCom"));
-                decimal vt  = Dec(Txt(prod, "vProd"));
+                decimal vu = Dec(Txt(prod, "vUnCom"));
+                decimal vt = Dec(Txt(prod, "vProd"));
 
                 d.Produtos.Add(new ProdutoItem
                 {
-                    Item      = (itemNum++).ToString(),
-                    Codigo    = Txt(prod, "cProd"),
+                    Item = (itemNum++).ToString(),
+                    Codigo = Txt(prod, "cProd"),
                     Descricao = Txt(prod, "xProd"),
-                    Ncm       = Txt(prod, "NCM"),
-                    Cfop      = Txt(prod, "CFOP"),
-                    Qtd       = qtd.ToString("N3", PtBR),
-                    Unidade   = Txt(prod, "uCom"),
-                    ValUnit   = vu.ToString("C2", PtBR),
-                    ValTotal  = vt.ToString("C2", PtBR)
+                    Ncm = Txt(prod, "NCM"),
+                    Cfop = Txt(prod, "CFOP"),
+                    Qtd = qtd.ToString("N3", PtBR),
+                    Unidade = Txt(prod, "uCom"),
+                    ValUnit = vu.ToString("C2", PtBR),
+                    ValTotal = vt.ToString("C2", PtBR)
                 });
             }
 
@@ -195,11 +197,11 @@ namespace VerificarDeXMLNFCE
             if (tot != null)
             {
                 d.ValorTotal = Dec(Txt(tot, "vNF")).ToString("C2", PtBR);
-                d.ValorProd  = Dec(Txt(tot, "vProd")).ToString("C2", PtBR);
-                d.Desconto   = Dec(Txt(tot, "vDesc")).ToString("C2", PtBR);
-                d.Frete      = Dec(Txt(tot, "vFrete")).ToString("C2", PtBR);
-                d.Seguro     = Dec(Txt(tot, "vSeg")).ToString("C2", PtBR);
-                d.ValIcms    = Dec(Txt(tot, "vICMS")).ToString("C2", PtBR);
+                d.ValorProd = Dec(Txt(tot, "vProd")).ToString("C2", PtBR);
+                d.Desconto = Dec(Txt(tot, "vDesc")).ToString("C2", PtBR);
+                d.Frete = Dec(Txt(tot, "vFrete")).ToString("C2", PtBR);
+                d.Seguro = Dec(Txt(tot, "vSeg")).ToString("C2", PtBR);
+                d.ValIcms = Dec(Txt(tot, "vICMS")).ToString("C2", PtBR);
             }
 
             // ── pagamento ────────────────────────────────────────────────────────
@@ -212,7 +214,8 @@ namespace VerificarDeXMLNFCE
             {
                 string tPag = Txt(pg, "tPag");
                 string vPag = Dec(Txt(pg, "vPag")).ToString("C2", PtBR);
-                formas.Add($"{DescricaoFormaPagamento(tPag)} ({vPag})");
+                if (!string.IsNullOrEmpty(tPag))
+                    formas.Add($"{DescricaoFormaPagamento(tPag)} ({vPag})");
             }
             d.FormaPagamento = formas.Count > 0 ? string.Join(" + ", formas) : "—";
 
@@ -225,62 +228,67 @@ namespace VerificarDeXMLNFCE
             var infAdic = Get(infNFe, "infAdic");
             if (infAdic != null)
             {
-                d.InfFisco   = Txt(infAdic, "infAdFisco");
+                d.InfFisco = Txt(infAdic, "infAdFisco");
                 d.InfContrib = Txt(infAdic, "infCpl");
             }
 
-            // ── protocolo (se nfeProc) ───────────────────────────────────────────
-            // ── Status da NF (emitida ou não) ─────────────────────────────
-            var prot = doc.Descendants(Ns + "protNFe").FirstOrDefault()
-         ?? doc.Descendants("protNFe").FirstOrDefault();
+            // ── protocolo — busca direta no documento todo para evitar problema de namespace ──
+            var infProt = doc.Descendants(Ns + "infProt").FirstOrDefault()
+                       ?? doc.Descendants("infProt").FirstOrDefault();
 
-            if (prot != null)
+            if (infProt == null)
             {
-                var infProt = prot.Element(Ns + "infProt") ?? prot.Element("infProt");
-                if (infProt != null)
+                d.StatusSefaz = StatusConsulta.Erro;
+                d.Observacao = "⚠ Nota não confirmada pelo SEFAZ";
+            }
+            if (infProt != null)
+            {
+                string cStat = infProt.Descendants(Ns + "cStat").FirstOrDefault()?.Value
+                            ?? infProt.Descendants("cStat").FirstOrDefault()?.Value
+                            ?? infProt.Element(Ns + "cStat")?.Value
+                            ?? infProt.Element("cStat")?.Value
+                            ?? "";
+
+                d.StatusSefaz = cStat switch
                 {
-                    string cStat = infProt.Element(Ns + "cStat")?.Value
-                                ?? infProt.Element("cStat")?.Value ?? "";
+                    "100" => StatusConsulta.ComPagamento,
+                    "101" or "102" or "110" => StatusConsulta.SemPagamento,
+                    _ => StatusConsulta.Erro
+                };
 
-                    d.StatusSefaz = cStat switch
-                    {
-                        "100" => StatusConsulta.ComPagamento,
-                        "101" or "102" or "110" => StatusConsulta.SemPagamento,
-                        _ => StatusConsulta.Erro
-                    };
+                d.Observacao = cStat switch
+                {
+                    "100" => "✔ EMITIDA (AUTORIZADA)",
+                    "101" => "❌ CANCELADA",
+                    "102" => "❌ INUTILIZADA",
+                    "110" => "⚠ DENEGADA",
+                    _ => $"❓ STATUS DESCONHECIDO ({cStat})"
+                };
 
-                    d.Observacao = cStat switch
-                    {
-                        "100" => "✔ EMITIDA (AUTORIZADA)",
-                        "101" => "❌ CANCELADA",
-                        "102" => "❌ INUTILIZADA",
-                        "110" => "⚠ DENEGADA",
-                        _ => $"❓ STATUS DESCONHECIDO ({cStat})"
-                    };
-                }
+                d.Protocolo = infProt.Descendants(Ns + "nProt").FirstOrDefault()?.Value
+                           ?? infProt.Element(Ns + "nProt")?.Value
+                           ?? infProt.Element("nProt")?.Value
+                           ?? "";
+
+                d.DtAutorizacao = ParseData(
+                           infProt.Descendants(Ns + "dhRecbto").FirstOrDefault()?.Value
+                        ?? infProt.Element(Ns + "dhRecbto")?.Value
+                        ?? infProt.Element("dhRecbto")?.Value
+                        ?? "");
             }
             else
             {
-                // XML sem protNFe = nota sem protocolo embutido
-                // Se tem chave e dados válidos, considera emitida
-                if (!string.IsNullOrEmpty(d.ChaveAcesso) && d.ChaveAcesso.Length == 44)
-                {
-                    d.StatusSefaz = StatusConsulta.ComPagamento;
-                    d.Observacao = "✔ EMITIDA (protocolo não embutido no XML)";
-                }
-                else
-                {
-                    d.StatusSefaz = StatusConsulta.Erro;
-                    d.Observacao = "XML sem protocolo de autorização";
-                }
+                // Sem protNFe = XML gerado mas não retornou autorização do SEFAZ
+                d.StatusSefaz = StatusConsulta.Erro;
+                d.Observacao = "⚠ Nota gerada, mas sem confirmação do SEFAZ";
             }
-            // DigestValue
+
+            // ── DigestValue ──────────────────────────────────────────────────────
             var sig = doc.Descendants(XName.Get("DigestValue", "http://www.w3.org/2000/09/xmldsig#")).FirstOrDefault();
             d.DigestValue = sig?.Value ?? "";
 
             return d;
         }
-
         // ─── Helpers ──────────────────────────────────────────────────────────
         private static XElement? Get(XElement parent, string name)
             => parent.Element(Ns + name) ?? parent.Element(name);

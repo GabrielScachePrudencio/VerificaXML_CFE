@@ -20,3 +20,4 @@ C:\Users\Flavio\Desktop\Linguagens\PROJETOS\VerificarDeXMLNFCE\VerificarDeXMLNFC
 C:\Users\Flavio\Desktop\Linguagens\PROJETOS\VerificarDeXMLNFCE\VerificarDeXMLNFCE\obj\Debug\net8.0-windows\VerificarDeXMLNFCE.pdb
 C:\Users\Flavio\Desktop\Linguagens\PROJETOS\VerificarDeXMLNFCE\VerificarDeXMLNFCE\obj\Debug\net8.0-windows\VerificarDeXMLNFCE.genruntimeconfig.cache
 C:\Users\Flavio\Desktop\Linguagens\PROJETOS\VerificarDeXMLNFCE\VerificarDeXMLNFCE\obj\Debug\net8.0-windows\ref\VerificarDeXMLNFCE.dll
+C:\Users\Flavio\Desktop\Linguagens\PROJETOS\VerificarDeXMLNFCE\VerificarDeXMLNFCE\obj\Debug\net8.0-windows\VerificarDeXMLNFCE.sourcelink.json

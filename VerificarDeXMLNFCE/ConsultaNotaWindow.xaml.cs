@@ -139,9 +139,7 @@ namespace VerificarDeXMLNFCE
                 var detalhe = new NfceDetalhe
                 {
                     ChaveAcesso = entrada,
-                    Fonte = "Chave manual",
-                    StatusSefaz = StatusConsulta.ComPagamento,  // ← já começa como emitida
-                    Observacao = "✔ EMITIDA"
+                    Fonte = "Chave manual"
                 };
                 await ConsultarEExibir(detalhe);
             }

@@ -432,6 +432,7 @@
                               ScrollViewer.CanContentScroll="True"
                               EnableRowVirtualization="True"
                               VirtualizingPanel.IsVirtualizing="True"
+                              MouseRightButtonUp="DgResultados_MouseRightButtonUp"
                               MouseDoubleClick="DgResultados_MouseDoubleClick"
                               Margin="0"
                               ToolTip="Clique duplo em uma linha para ver os detalhes completos da nota">

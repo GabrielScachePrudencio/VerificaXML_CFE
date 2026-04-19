@@ -62,10 +62,10 @@ namespace VerificarDeXMLNFCE
 
         public string StatusLabel => Status switch
         {
-            StatusConsulta.ComPagamento => "✅  Emitida",
-            StatusConsulta.SemPagamento => "❌  Não emitida",
+            StatusConsulta.ComPagamento => "✅  Autorizada",
+            StatusConsulta.SemPagamento => "❌  Não autorizada",
             StatusConsulta.SemChave => "⚠️  Sem chave",
-            _ => "⚠️  Erro"
+            _ => "⚠️  Não confirmada"
         };
 
         public Brush StatusBackground => Status switch
